@@ -1,6 +1,25 @@
 #include <iostream>
 #include <string>
 using namespace std;
+float calculateFruitPrice(string fruit, string dayOfWeek, double quantity);
+int main() {
+    string fruit, dayOfWeek;
+    double quantity;
+
+    cout << "Enter the fruit name: ";
+    cin >> fruit;
+    cout << "Enter the day of the week (e.g., Monday, Sunday): ";
+    cin >> dayOfWeek;
+    cout << "Enter quantity: ";
+    cin >> quantity;
+
+    float totalPrice = calculateFruitPrice(fruit, dayOfWeek, quantity);
+    if (totalPrice != -1) {
+        cout << "Total Price: $" << totalPrice << endl;
+    }
+
+    return 0;
+}
 
 float calculateFruitPrice(string fruit, string dayOfWeek, double quantity) {
     float price = 0.0;
@@ -67,21 +86,3 @@ float calculateFruitPrice(string fruit, string dayOfWeek, double quantity) {
     return price * quantity;
 }
 
-int main() {
-    string fruit, dayOfWeek;
-    double quantity;
-
-    cout << "Enter fruit: ";
-    cin >> fruit;
-    cout << "Enter day of the week: ";
-    cin >> dayOfWeek;
-    cout << "Enter quantity: ";
-    cin >> quantity;
-
-    float totalPrice = calculateFruitPrice(fruit, dayOfWeek, quantity);
-    if (totalPrice != -1) {
-        cout << "Total Price: $" << totalPrice << endl;
-    }
-
-    return 0;
-}

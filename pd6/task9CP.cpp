@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-string checkPointPosition(int h, int x, int y) {
+string checkPosition(int h, int x, int y) {
     bool inLowerPart = (x >= 0 && x <= 3*h && y >= 0 && y <= h);
     bool onLowerBorder = (x == 0 || x == 3*h || y == 0 || y == h) && inLowerPart;
 
@@ -30,7 +30,7 @@ int main() {
     cout << "Enter y coordinate: ";
     cin >> y;
 
-    cout << checkPointPosition(h, x, y) << endl;
+    cout << checkPosition(h, x, y) << endl;
 
     return 0;
 }
