@@ -72,7 +72,7 @@ float calculateFruitPrice(string fruit, string dayOfWeek, double quantity) {
             price = 3.85;
         }
     } else {
-        cout << "error" << endl;
+        cout << "errors" << endl;
         return -1;
     }
 

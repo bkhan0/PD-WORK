@@ -3,19 +3,7 @@
 #include <string>
 using namespace std;
 
-int calculateVolleyballGames(string yearType, int holidays, int hometownWeekends) {
-    const int totalWeekends = 48;
-    int weekendsInSofia = totalWeekends - hometownWeekends;
-    double gamesInSofia = (weekendsInSofia * 3.0) / 4.0;
-    double holidayGames = (holidays * 2.0) / 3.0;
-    int totalGames = gamesInSofia + hometownWeekends + holidayGames;
-
-    if (yearType == "leap") {
-        totalGames += totalGames * 0.15;
-    }
-
-    return floor(totalGames);
-}
+int calculateVolleyballGames(string yearType, int holidays, int hometownWeekends);
 
 int main() {
     string yearType;
@@ -29,7 +17,21 @@ int main() {
     cin >> hometownWeekends;
 
     int totalGames = calculateVolleyballGames(yearType, holidays, hometownWeekends);
-    cout << "Vladimir has played volleyball " << totalGames << " times throughout the year." << endl;
+    cout << totalGames;
 
     return 0;
+}
+
+int calculateVolleyballGames(string yearType, int holidays, int hometownWeekends) {
+    int totalWeekends = 48;
+    int weekendsInSofia = totalWeekends - hometownWeekends;
+    double gamesInSofia = (weekendsInSofia * 3.0) / 4.0;
+    double holidayGames = (holidays * 2.0) / 3.0;
+    int totalGames = gamesInSofia + hometownWeekends + holidayGames;
+
+    if (yearType == "leap") {
+        totalGames += round(totalGames * 0.15);
+    }
+
+    return round(totalGames);
 }

@@ -34,9 +34,15 @@ string checkStudentStatus(int examHour, int examMinute, int studentHour, int stu
 }
 
 int main() {
-    // Test the function
     int examHour, examMinute, studentHour, studentMinute;
-    cin >> examHour >> examMinute >> studentHour >> studentMinute;
+    cout << "Enter Exam Starting Time (hour): ";
+    cin >> examHour;
+    cout << "Enter Exam Starting Time (minutes): ";
+    cin >> examMinute;
+    cout << "Enter Student hour of arrival: ";
+    cin >> studentHour;
+    cout << "Enter Student minutes of arrival: ";
+    cin >> studentMinute;
 
     cout << checkStudentStatus(examHour, examMinute, studentHour, studentMinute) << endl;
 

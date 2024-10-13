@@ -42,7 +42,7 @@ int main() {
     string month;
     int numberOfStays;
 
-    cout << "Enter month: ";
+    cout << "Enter the month (May, June, July, August, September, October): ";
     cin >> month;
     cout << "Enter number of stays: ";
     cin >> numberOfStays;
